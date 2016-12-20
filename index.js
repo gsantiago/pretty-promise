@@ -109,7 +109,6 @@ fn._addHandlers = function _addHandlers (onFulfilled, onRejected, nextPromise) {
  */
 
 fn.then = function then (onFulfilled, onRejected) {
-  // Create a new promise that will be returned
   var nextPromise = pp()
 
   this._addHandlers(onFulfilled, onRejected, nextPromise)
@@ -123,6 +122,16 @@ fn.then = function then (onFulfilled, onRejected) {
   }
 
   return nextPromise
+}
+
+/**
+ * Alias for `then(null, onRejected)`.
+ * @method
+ * @param {Function} onRejected
+ */
+
+fn.catch = function catchPromise (onRejected) {
+  return this.then(null, onRejected)
 }
 
 /**

@@ -3,6 +3,11 @@
 [![Build Status](https://travis-ci.org/gsantiago/pretty-promise.svg?branch=master)](https://travis-ci.org/gsantiago/pretty-promise)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
+<a href="https://promisesaplus.com/">
+  <img src="https://rawgit.com/promises-aplus/promises-spec/master/logo.svg" with="50" height="50" alt="Promises/A+ logo"
+  title="Promises/A+ 1.0 compliant"/>
+</a>
+
 Small and lightweight implementation of [Promises A/+](https://promisesaplus.com).
 
 ```js

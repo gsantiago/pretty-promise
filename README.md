@@ -89,12 +89,12 @@ Add the promise's handlers.
 
 ### `pp#catch(onRejected) -> Promise`
 
-A shortcut for `promise.then(null, onRejected) -> Promise`.
+A shortcut for `promise.then(null, onRejected)`.
 
 ## todo
 
 - [x] Implements [Promises A/+ spec](https://promisesaplus.com).
-- [ ] Implements `catch(onRejected)` alias.
+- [x] Implements `catch(onRejected)` alias.
 - [ ] Implements `tp.when()` static method.
 
 ## license

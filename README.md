@@ -83,11 +83,11 @@ function myAsyncFunc () {
 }
 ```
 
-## `pp#then(onFulfilled, onRejected) -> Promise`
+### `pp#then(onFulfilled, onRejected) -> Promise`
 
 Add the promise's handlers.
 
-## `pp#catch(onRejected) -> Promise`
+### `pp#catch(onRejected) -> Promise`
 
 A shortcut for `promise.then(null, onRejected) -> Promise`.
 

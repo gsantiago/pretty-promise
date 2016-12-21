@@ -23,7 +23,8 @@ var promise = pp(function (resolve, reject) {
 promise
 .then(function onFulfilled (value) {
   console.log(value)
-}, function onRejected (reason) {
+})
+.catch(function onRejected (reason) {
   console.log(reason)
 })
 ```
@@ -45,6 +46,8 @@ Then, just run:
 `npm test`
 
 ## api
+
+### `pp(resolver) -> Promise`
 
 You can create promises with a `resolver` function:
 
@@ -79,6 +82,14 @@ function myAsyncFunc () {
   return promise
 }
 ```
+
+## `pp#then(onFulfilled, onRejected) -> Promise`
+
+Add the promise's handlers.
+
+## `pp#catch(onRejected) -> Promise`
+
+A shortcut for `promise.then(null, onRejected) -> Promise`.
 
 ## todo
 

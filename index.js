@@ -295,3 +295,42 @@ pp.resolutionProcedure = function resolutionProcedure (promise, x) {
 pp.isPromise = function (obj) {
   return obj && isFunction(obj.then)
 }
+
+/**
+ *
+ * @static
+ * @param {Array} items
+ * @return {Promise} promise
+ */
+
+pp.when = function when (items) {
+  if (pp.isPromise(items)) return items
+
+  var results = []
+  var isRejected = false
+  var promiseResolution = pp()
+
+  ;[].concat(items).forEach(function (item) {
+    if (!pp.isPromise(item)) {
+      results.push(pp().resolve(item))
+      if (results.length === items.length) {
+        promiseResolution.resolve(results)
+      }
+      return
+    }
+
+    item
+    .then(function (value) {
+      results.push(value)
+      if (results.length === items.length) {
+        promiseResolution.resolve(results)
+      }
+    })
+    .catch(function (reason) {
+      promiseResolution.reject(reason)
+      isRejected = true
+    })
+  })
+
+  return promiseResolution
+}

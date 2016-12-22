@@ -6,7 +6,6 @@
 
 var isFunction = require('is-function')
 var isObject = require('is-object')
-var isArray = require('is-array')
 
 /**
  * Exposes `PrettyPromise`.
@@ -306,7 +305,6 @@ pp.isPromise = function (obj) {
 
 pp.when = function when (items) {
   var results = []
-  var count = 0
   var promiseResolution = pp()
 
   items = [].concat(items)
@@ -323,14 +321,13 @@ pp.when = function when (items) {
       }
 
       item
-      .then(function (value) {
+      .then(function onFulfilled (value) {
         results[index] = value
         remaining -= 1
         if (!remaining) {
           promiseResolution.resolve(results)
         }
-      })
-      .catch(function (reason) {
+      }, function onRejected (reason) {
         promiseResolution.reject(reason)
         remaining = 0
       })

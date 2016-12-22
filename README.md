@@ -94,8 +94,15 @@ A shortcut for `promise.then(null, onRejected)`.
 ## todo
 
 - [x] Implements [Promises A/+ spec](https://promisesaplus.com).
-- [x] Implements `catch(onRejected)` alias.
-- [ ] Implements `tp.when()` static method.
+- [x] Implements `#catch(onRejected)`.
+- [x] Implements `pp.isPromise()`.
+- [x] Implements `pp.when()`.
+- [ ] Implements `#map()`, `#forEach()`, `#filter()`, and other similar methods.
+- [ ] Create documentation.
+- [ ] Create site.
+- [ ] Create browser distribution with Browserify.
+- [ ] Setup tests with Karma for the browser.
+- [ ] Add SauceLabs tests support.
 
 ## license
 

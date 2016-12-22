@@ -29,6 +29,7 @@
     "standard": "^8.6.0"
   },
   "dependencies": {
+    "is-array": "^1.0.1",
     "is-function": "^1.0.1",
     "is-object": "^1.0.1"
   }

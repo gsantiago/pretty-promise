@@ -243,6 +243,19 @@ fn._executeOnRejectedHandlers = function _executeOnRejectedHandlers () {
 }
 
 /**
+ * `forEach` implementation for promises.
+ * @method
+ * @param {Function} iterator
+ */
+
+fn.forEach = function forEach (iterator) {
+  return this.then(function (values) {
+    values.forEach(iterator)
+    return values
+  })
+}
+
+/**
  * Promise Resolution Procedure
  * @static
  * @param {Promise} promise

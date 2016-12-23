@@ -30,6 +30,14 @@ var REJECTED = 'REJECTED'
 function PrettyPromise (resolver) {
   if (!(this instanceof PrettyPromise)) return new PrettyPromise(resolver)
 
+  if (resolver instanceof PrettyPromise) return resolver
+
+  if (pp.isPromise(resolver)) {
+    return pp(function (resolve, reject) {
+      resolver.then(resolve, reject)
+    })
+  }
+
   // this.value = undefined
   // this.reason = undefined
 

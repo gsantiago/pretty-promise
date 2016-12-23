@@ -18,10 +18,10 @@
   "author": "Guilherme Santiago",
   "license": "MIT",
   "scripts": {
-    "test": "npm run ava -s && promises-aplus-tests test/adapter",
+    "test": "npm run ava -s && promises-aplus-tests test/then.test.js",
     "pretest": "npm run standard",
     "standard": "standard index.js",
-    "ava": "ava test/*.test.js"
+    "ava": "ava test/*.test.js !test/then.test.js"
   },
   "devDependencies": {
     "ava": "^0.17.0",

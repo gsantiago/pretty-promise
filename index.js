@@ -6,6 +6,8 @@
 
 var isFunction = require('is-function')
 var isObject = require('is-object')
+var toArray = require('to-array')
+var Args = require('./lib/Args')
 
 /**
  * Exposes `PrettyPromise`.
@@ -356,4 +358,15 @@ pp.when = function when (items) {
   })
 
   return promiseResolution
+}
+
+/**
+ * A simple class that allows you to return multiple values from Promises.
+ * @static
+ * @param {*}
+ * @return {Args} args
+ */
+
+pp.args = function args () {
+  return new Args(toArray(arguments))
 }

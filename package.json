@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "is-function": "^1.0.1",
-    "is-object": "^1.0.1"
+    "is-object": "^1.0.1",
+    "to-array": "^0.1.4"
   }
 }

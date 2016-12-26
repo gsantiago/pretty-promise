@@ -19,8 +19,8 @@
         Pretty Promise
       </a>
       <nav class="main-header-menu">
-        <a href="#">Getting Started</a>
-        <a href="#">API</a>
+        <a href="/pretty-promise">Getting Started</a>
+        <a href="constructor.html">API</a>
         <a href="http://github.com/gsantiago/pretty-promise" target="_blank">Github</a>
       </nav>
     </div>

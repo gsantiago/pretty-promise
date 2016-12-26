@@ -1,0 +1,157 @@
+/**
+ * General.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #eee;
+  padding-top: 75px;
+  font-size: 100%;
+}
+
+.container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.5;
+}
+
+p, pre {
+  margin: 0;
+  margin-top: 30px;
+}
+
+/**
+ * Main Header
+ */
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #4E40FF;
+  color: #fff;
+}
+
+.main-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-header-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.main-header-menu {
+
+}
+
+.main-header-menu a {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 20px;
+}
+
+.main-header-menu a:hover {
+  background-color: #FFBC0D;
+  color: #4E40FF;
+}
+
+/**
+ * Main Content.
+ */
+
+.main-content {
+  padding-left: 340px;
+  padding-right: 20px;
+}
+
+/**
+ * Sidebar.
+ */
+
+.sidebar {
+  position: fixed;
+  top: 75px;
+  left: 20px;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.sidebar .menu {
+  padding: 20px 0;
+}
+
+.sidebar .menu .block:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.sidebar .menu .block a,
+.sidebar .menu .block strong {
+  display: block;
+  padding: 10px 20px;
+}
+
+.sidebar .menu .block a:hover {
+  background-color: #ddd;
+}
+
+/**
+ * Content.
+ */
+
+.content {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding-top: 30px;
+}
+
+.content p,
+.content h1 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.content a {
+  color: #4E40FF;
+  text-decoration: underline;
+}
+
+/**
+ * Titles.
+ */
+
+h1 {
+  color: #4E40FF;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+/**
+ * Code Blocks.
+ */
+
+.hljs {
+  padding-left: 20px;
+  line-height: 1.4;
+}

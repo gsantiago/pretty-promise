@@ -1,36 +1,11 @@
 {
-  "name": "pretty-promise",
-  "version": "0.0.2",
-  "description": "Small and lightweight implementation of Promises A/+",
-  "keywords": [
-    "promise",
-    "tiny",
-    "small",
-    "fast",
-    "lightweight",
-    "simple",
-    "promises-aplus"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gsantiago/pretty-promise"
-  },
-  "author": "Guilherme Santiago",
-  "license": "MIT",
   "scripts": {
-    "test": "npm run ava -s && promises-aplus-tests test/then.test.js",
-    "pretest": "npm run standard",
-    "standard": "standard index.js",
-    "ava": "ava test/*.test.js !test/then.test.js"
+    "build": "node build.js"
   },
   "devDependencies": {
-    "ava": "^0.17.0",
-    "promises-aplus-tests": "^2.1.2",
-    "standard": "^8.6.0"
-  },
-  "dependencies": {
-    "is-function": "^1.0.1",
-    "is-object": "^1.0.1",
-    "to-array": "^0.1.4"
+    "fs-promise": "^1.0.0",
+    "glob-contents": "0.0.3",
+    "markdown-yaml-metadata-parser": "0.0.4",
+    "marked": "^0.3.6"
   }
 }

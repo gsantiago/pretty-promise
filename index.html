@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-dark.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+  <title>Pretty Promise</title>
+</head>
+<body>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <header class="main-header">
+    <div class="container">
+      <a href="/" class="main-header-logo">
+        Pretty Promise
+      </a>
+      <nav class="main-header-menu">
+        <a href="#">Getting Started</a>
+        <a href="#">API</a>
+        <a href="#">Github</a>
+      </nav>
+    </div>
+  </header>
+  <main class="main-content">
+    <aside class="sidebar">
+      <nav class="menu">
+        <div class="block">
+          <div>
+            <strong>Introduction</strong>
+          </div>
+          <div>
+            <a href="#">What is it?</a>
+          </div>
+          <div>
+            <a href="#">Getting Started</a>
+          </div>
+          <div>
+            <a href="#">Download</a>
+          </div>
+        </div>
+        <div class="block">
+          <div>
+            <strong>API</strong>
+          </div>
+          <div>
+            <a href="#">constructor</a>
+          </div>
+          <div>
+            <a href="#">#resolve</a>
+          </div>
+          <div>
+            <a href="#">#reject</a>
+          </div>
+          <div>
+            <a href="#">#then</a>
+          </div>
+          <div>
+            <a href="#">#catch</a>
+          </div>
+          <div>
+            <a href="#">#forEach</a>
+          </div>
+          <div>
+            <a href="#">#map</a>
+          </div>
+          <div>
+            <a href="#">#filter</a>
+          </div>
+          <div>
+            <a href="#">#reduce</a>
+          </div>
+          <div>
+            <a href="#">.isPromise</a>
+          </div>
+          <div>
+            <a href="#">.when</a>
+          </div>
+          <div>
+            <a href="#">.args</a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    <div class="content">
+      <h1>Getting Started</h1>
+
+      <p>
+        Lorem ipsum dolor <a href="#">some link</a> sit amet, consectetur adipisicing elit. Asperiores ipsum, iure natus eveniet odit, exercitationem vero obcaecati, vitae praesentium magnam voluptatibus, accusantium repellendus odio. Eaque quia, officia iure, atque praesentium repellat consectetur placeat! Ut iste nemo impedit ad eligendi deleniti mollitia expedita quod laborum, quas nulla reiciendis at sunt perspiciatis aliquam, maiores dicta sit fugiat consequatur quidem hic. Quae esse placeat porro voluptas libero facere, quos dolores, id voluptates reiciendis. Distinctio autem, quibusdam fugiat incidunt, nulla quisquam placeat magnam modi quidem quo perspiciatis dolores. Dolor id, reiciendis, voluptatum voluptas hic deleniti soluta libero praesentium at inventore sapiente quos! Nulla sequi ipsa, sit numquam nemo similique beatae. Adipisci recusandae, id sunt impedit animi error aut, quidem consequatur tempore ex illum nihil laborum et consequuntur itaque culpa cupiditate molestiae eligendi quasi repudiandae nesciunt dolor. Officia unde vitae amet consequatur voluptas, libero magni illum necessitatibus, iusto commodi alias id facilis iste eius in provident. Repudiandae, beatae, pariatur. Doloribus minus suscipit, deleniti ullam. Incidunt facere ullam, cum maxime autem ad obcaecati atque cupiditate, corrupti dolorum eius doloribus architecto nostrum laborum itaque accusamus eum vero commodi voluptates laboriosam maiores modi? Odio qui nam dolorem vitae. Quisquam expedita quas eos deleniti placeat eum, eius omnis officiis.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse omnis ut pariatur debitis architecto saepe temporibus voluptatibus dolores, sint excepturi, possimus eaque! Cupiditate ab ipsam, ipsa tempore, dolore cumque, dolorem suscipit explicabo ea nesciunt enim nobis ullam nam molestias accusantium magnam doloremque excepturi sunt provident quae alias in! Nemo sapiente debitis, culpa minima, iure nobis doloribus. Ullam neque facilis eveniet, eligendi, obcaecati cumque accusamus esse labore amet eos asperiores repudiandae hic laudantium soluta dolore nihil cum dolorum consectetur laborum provident? Aliquid vitae iusto molestiae necessitatibus sit unde nostrum, inventore aliquam quo. Incidunt voluptatem cumque voluptas. Error fuga, nihil odit commodi, maiores dolor porro modi quam, quo voluptatem explicabo. Quos voluptatibus eos consequatur ex dolores nam obcaecati, error, reprehenderit facilis eaque.
+      </p>
+      <pre><code class="javascript">
+// Import PrettyPromise
+var pp = require('pretty-promise')
+
+// Create a promise
+var myPromise = pp(function (resolve, reject) {
+  someAsyncFunction(function callback (err, value) {
+    if (err) reject(err)
+    resolve(value)
+  })
+})
+        </code></pre>
+    </div>
+  </main>
+</body>
+</html>

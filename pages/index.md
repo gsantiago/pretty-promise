@@ -1,8 +1,12 @@
 ---
-title: Index
+title: Getting Started
 category: Introduction
 ---
 
-# Home
+# Getting Started
 
-Some content for the home page here
+Pretty Promise (or just pp) is a JavaScript library.
+
+```js
+var test = 'name'
+```

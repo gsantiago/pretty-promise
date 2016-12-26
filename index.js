@@ -318,7 +318,7 @@ pp.isPromise = function (obj) {
 }
 
 /**
- *
+ * Resolves promises or anything you pass as params.
  * @static
  * @param {Array} items
  * @return {Promise} promise

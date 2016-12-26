@@ -191,7 +191,11 @@ fn._executeHandler = function _executeHandler (handler, argument, nextPromise) {
       var x
 
       try {
-        x = handler(argument)
+        if (argument instanceof Args) {
+          x = handler.apply(null, argument.args)
+        } else {
+          x = handler(argument)
+        }
       } catch (e) {
         return nextPromise.reject(e)
       }

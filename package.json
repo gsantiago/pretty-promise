@@ -1,11 +1,17 @@
 {
   "scripts": {
+    "serve": "static-server",
+    "prebuild": "del-cli *.html",
     "build": "node build.js"
   },
   "devDependencies": {
+    "del-cli": "^0.2.1",
+    "ejs": "^2.5.5",
     "fs-promise": "^1.0.0",
     "glob-contents": "0.0.3",
+    "lodash": "^4.17.3",
     "markdown-yaml-metadata-parser": "0.0.4",
-    "marked": "^0.3.6"
+    "marked": "^0.3.6",
+    "static-server": "^2.0.3"
   }
 }

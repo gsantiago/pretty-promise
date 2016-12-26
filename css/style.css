@@ -93,7 +93,7 @@ p, pre {
   top: 75px;
   left: 20px;
   width: 300px;
-  height: 100%;
+  height: calc(100% - 95px);
   background-color: #fff;
   border: 1px solid #ddd;
 }

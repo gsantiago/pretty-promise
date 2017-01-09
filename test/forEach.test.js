@@ -1,12 +1,12 @@
-var test = require('ava')
-var pp = require('..')
+const test = require('ava')
+const pp = require('..')
 
-test('forEach iterator', function (t) {
+test('forEach iterator', t => {
   t.plan(6)
 
-  var dummy = ['a', 'b', 'c', 'd', 'e']
+  const dummy = ['a', 'b', 'c', 'd', 'e']
 
-  var promise = pp(function (resolve) {
+  const promise = pp(function (resolve) {
     setTimeout(function () {
       resolve(dummy)
     })
@@ -21,12 +21,12 @@ test('forEach iterator', function (t) {
   })
 })
 
-test('forEach iterator with a promise from another library', function (t) {
+test('forEach iterator with a promise from another library', t => {
   t.plan(6)
 
-  var dummy = ['a', 'b', 'c', 'd', 'e']
+  const dummy = ['a', 'b', 'c', 'd', 'e']
 
-  var promise = new Promise(function (resolve) {
+  const promise = new Promise(function (resolve) {
     setTimeout(function () {
       resolve(dummy)
     })

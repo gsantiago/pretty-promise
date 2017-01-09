@@ -1,11 +1,11 @@
-var test = require('ava')
-var pp = require('..')
-var isFunction = require('is-function')
+const test = require('ava')
+const pp = require('..')
+const isFunction = require('is-function')
 
 test('should accept a resolver function that resolves the promise', t => {
   t.plan(3)
 
-  var promise = pp(function (resolve, reject) {
+  const promise = pp(function (resolve, reject) {
     t.truthy(isFunction(resolve))
     t.truthy(isFunction(reject))
 
@@ -20,7 +20,7 @@ test('should accept a resolver function that resolves the promise', t => {
 test('should accept a resolver function that rejects the promise', t => {
   t.plan(3)
 
-  var promise = pp(function (resolve, reject) {
+  const promise = pp(function (resolve, reject) {
     t.truthy(isFunction(resolve))
     t.truthy(isFunction(reject))
 
@@ -37,8 +37,8 @@ test('should accept a resolver function that rejects the promise', t => {
 test('should accept another promise as argument', function (t) {
   t.plan(2)
 
-  var somePromise = pp().resolve('resolved value')
-  var newPromise = pp(somePromise)
+  const somePromise = pp().resolve('resolved value')
+  const newPromise = pp(somePromise)
 
   t.truthy(newPromise instanceof pp)
 
@@ -50,13 +50,13 @@ test('should accept another promise as argument', function (t) {
 test('should accept a promise from a different library A/+ compliant', t => {
   t.plan(2)
 
-  var somePromise = new Promise(function (resolve, reject) {
+  const somePromise = new Promise(function (resolve, reject) {
     setTimeout(function () {
       resolve('resolved value')
     }, 300)
   })
 
-  var newPromise = pp(somePromise)
+  const newPromise = pp(somePromise)
 
   t.truthy(newPromise instanceof pp)
 

@@ -1,9 +1,9 @@
-var test = require('ava')
-var pp = require('..')
+const test = require('ava')
+const pp = require('..')
 
-test(function (t) {
+test(t => {
   t.plan(1)
-  var promise = pp().reject('reason')
+  const promise = pp().reject('reason')
 
   return promise.catch(function (reason) {
     t.is(reason, 'reason')

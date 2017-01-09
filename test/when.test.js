@@ -1,22 +1,22 @@
-var test = require('ava')
-var pp = require('..')
+const test = require('ava')
+const pp = require('..')
 
-test('only strings', function (t) {
+test('only strings', t => {
   t.plan(1)
 
-  var promise = pp.when(['a', 'b', 'c'])
+  const promise = pp.when(['a', 'b', 'c'])
 
   return promise.then(function (values) {
     t.deepEqual(values, ['a', 'b', 'c'])
   })
 })
 
-test('only promises', function (t) {
+test('only promises', t => {
   t.plan(1)
 
-  var promise1 = pp()
-  var promise2 = pp()
-  var promise3 = pp()
+  const promise1 = pp()
+  const promise2 = pp()
+  const promise3 = pp()
 
   promise1.resolve('dummy1')
   promise2.resolve('dummy2')
@@ -27,25 +27,25 @@ test('only promises', function (t) {
   })
 })
 
-test('mixed arguments', function (t) {
+test('mixed arguments', t => {
   t.plan(1)
 
-  var promise1 = pp().resolve('dummy1')
-  var promise2 = pp()
-  var promise3 = pp().resolve('dummy3')
+  const promise1 = pp().resolve('dummy1')
+  const promise2 = pp()
+  const promise3 = pp().resolve('dummy3')
 
   setTimeout(function () {
     promise2.resolve('dummy2')
   }, 300)
 
-  var args = ['a', promise1, 'b', promise2, 'c', promise3]
+  const args = ['a', promise1, 'b', promise2, 'c', promise3]
 
   return pp.when(args).then(function (values) {
     t.deepEqual(values, ['a', 'dummy1', 'b', 'dummy2', 'c', 'dummy3'])
   })
 })
 
-test('single object', function (t) {
+test('single object', t => {
   t.plan(1)
 
   return pp.when({dummy: 'dummy'}).then(function (values) {
@@ -53,10 +53,10 @@ test('single object', function (t) {
   })
 })
 
-test('single promise', function (t) {
+test('single promise', t => {
   t.plan(1)
 
-  var promise = pp()
+  const promise = pp()
 
   setTimeout(function () {
     promise.resolve('dummy')
@@ -67,23 +67,23 @@ test('single promise', function (t) {
   })
 })
 
-test('rejected promise', function (t) {
+test('rejected promise', t => {
   t.plan(1)
 
-  var promise1 = pp().resolve('dummy1')
-  var promise2 = pp().reject('reason')
+  const promise1 = pp().resolve('dummy1')
+  const promise2 = pp().reject('reason')
 
   return pp.when([promise1, 'a', promise2, 'b']).catch(function (reason) {
     t.is(reason, 'reason')
   })
 })
 
-test('mixed objects with a eventually-rejected promise', function (t) {
+test('mixed objects with a eventually-rejected promise', t => {
   t.plan(1)
 
-  var promise1 = pp()
-  var promise2 = pp().resolve('dummy2')
-  var promise3 = pp()
+  const promise1 = pp()
+  const promise2 = pp().resolve('dummy2')
+  const promise3 = pp()
 
   setTimeout(function () {
     promise1.resolve('dummy1')
@@ -93,7 +93,7 @@ test('mixed objects with a eventually-rejected promise', function (t) {
     promise3.reject('reason1')
   })
 
-  var args = ['a', promise1, {b: 'b'}, promise2, ['c'], promise3]
+  const args = ['a', promise1, {b: 'b'}, promise2, ['c'], promise3]
 
   return pp.when(['a', promise1, promise2, promise3]).catch(function (reason) {
     t.is(reason, 'reason1')
